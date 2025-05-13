@@ -1,0 +1,662 @@
+/* Definición de la fuente CalSans Regular */
+@font-face {
+    font-family: 'CalSans Regular';
+    src: url('Material_MasProtec/Fuente/Cal_Sans/CalSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Yesteryear Regular';
+    src: url('Material_MasProtec/Fuente/Yesteryear/Yesteryear-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos CSS básicos para la estructura */
+body {
+    background-color: #e8e6e6;
+    font-family: 'CalSans Regular', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    align-items: center;
+    background-color: white;
+    color: black;
+    display: flex;
+    padding: 10px 20px; /* Reduje un poco el padding vertical */
+    position: relative;
+    justify-content: space-between; /* Espacio entre el primer y último elemento */
+}
+
+.logo {
+    /* El logo se quedará a la izquierda por defecto */
+}
+
+nav {
+    flex-grow: 1; /* La navegación intentará ocupar el espacio disponible */
+    text-align: left; /* Alinea los elementos de la navegación a la izquierda para una mejor distribución con space-around */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+    width: 100%; /* Asegura que la lista ocupe todo el ancho del nav */
+}
+
+nav li {
+    position: relative;
+}
+
+nav li a {
+    color: black;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Añadimos una transición suave para el cambio de color */
+}
+
+nav li a:hover {
+    color: #ad1000; /* Cambia el color al verde al pasar el mouse */
+}
+
+.social-icon {
+    /* Se quedará a la derecha debido a justify-content: space-between en el header */
+}
+
+.social-icon img {
+    max-height: 30px;
+}
+/* Estilos para el submenú */
+.submenu {
+    background-color: #2da638; /* Un color claro para el submenú */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: 150px;
+    z-index: 10;
+    border: 1px solid #eee; /* Añadido un borde sutil */
+}
+
+.submenu li {
+    margin: 0;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    color: white; /* Cambiado el color del texto para que sea legible en fondo claro */
+}
+
+.submenu li a:hover {
+    background-color: #22812b; /* Un color de fondo al pasar el mouse */
+}
+
+nav li:hover .submenu {
+    display: block;
+}
+
+/* Estilos para la línea de división */
+hr {
+    border: 2px solid #ccc; /* Aumenté el grosor y oscurecí un poco el color */
+    margin: 10px 0; /* Añadí un margen vertical para separarla del banner y la barra */
+}
+
+/* Estilos para el banner */
+.banner-container {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.banner-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.featured-projects {
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    margin-bottom: 30px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.featured-projects h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.project-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: #888;
+    display: flex;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: calc(33.33% - 20px);
+}
+
+.project-box img {
+    display: block;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    width: 100%;
+}
+
+footer {
+    background-color: #333;
+    bottom: 0;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar {
+    display: none;
+}
+
+.content {
+    margin-left: 0;
+    padding: 20px;
+}
+
+.hero {
+    display: none;
+}
+
+/* Estilos para la sección de contacto y redes sociales */
+.contact-follow-section {
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 30px 20px;
+}
+
+.contact-box, .follow-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    text-align: center;
+    width: 45%;
+}
+
+.contact-box h3, .follow-box h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.contact-box p, .follow-box p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact-box img, .follow-box img {
+    height: auto;
+    margin-right: 8px;
+    max-width: 24px;
+    vertical-align: middle;
+}
+
+.follow-box a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.follow-box a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Ajuste para el margen en pantallas más pequeñas si es necesario */
+@media (max-width: 768px) {
+    .project-box {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-box {
+        width: 100%;
+    }
+}
+
+/* Estilos para la sección de Acrílicos */
+.Imp_Acrílicos{
+    background-color: #ad1000;
+    width: 550px;
+    height: 120px;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+.Imp_Acrílicos h1 {
+  font-size: 50px;
+  text-align: left;
+  margin-left: 50px;
+  margin-bottom: -15px;
+  color: white;
+}
+.Imp_Acrílicos p {
+ font-size: 30px;
+ text-align: left;
+ margin-left: 50px;
+ color: white;
+}
+.Acrílicos_Columna{
+    float: left;
+    width:25%;
+    text-align:center;
+    margin: 30px;
+    margin-left: 80px;
+}
+.Acrílicos_Columna img{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    margin-left: 30px;
+    margin-bottom: 0;
+    box-shadow: 2px 2px 2px 2px #9b9b9b;
+    border-radius: 30px;
+}
+
+.Acrílicos_Columna h2{
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    color: black;
+}
+
+/* Estilos para la sección de Asfálticos (exactamente igual a Acrílicos) */
+.Imp_Asfálticos{
+    background-color: #006709;
+    width: 550px;
+    height: 120px;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+.Imp_Asfálticos h1 {
+  font-size: 50px;
+  text-align: left;
+  margin-left: 50px;
+  margin-bottom: -15px;
+  color: white;
+}
+.Imp_Asfálticos p {
+ font-size: 30px;
+ text-align: left;
+ margin-left: 50px;
+ color: white;
+}
+.Asfálticos_Columna{
+    float: left;
+    width:25%;
+    text-align:center;
+    margin: 30px;
+    margin-left: 80px;
+}
+.Asfálticos_Columna img{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    margin-left: 30px;
+    margin-bottom: 0;
+    box-shadow: 2px 2px 2px 2px #9b9b9b;
+    border-radius: 30px;
+}
+
+.Asfálticos_Columna h2{
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    color: black;
+}
+/* Estilos para la sección Nosotros */
+.nosotros-info {
+    max-width: 800px; /* Establece un ancho máximo para evitar que el texto se extienda demasiado */
+    margin: 20px auto; /* Centra horizontalmente el bloque y añade un margen vertical */
+    padding: 20px; /* Añade un espacio alrededor del texto dentro del bloque */
+    text-align: justify; /* Justifica el texto para una apariencia más limpia */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    background-color: #f9f9f9; /* Un fondo ligeramente diferente para destacar la sección */
+    border-radius: 8px; /* Bordes redondeados suaves */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Una sombra sutil para darle profundidad */
+}
+
+.nosotros-info p {
+    margin-bottom: 15px; /* Añade espacio entre los párrafos */
+    font-size: 2.1em; /* Aumenta ligeramente el tamaño de la fuente para mejor lectura */
+    color: #333; /* Color de texto legible */
+}
+
+.nosotros-info p:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último párrafo */
+}
+/* Estilos específicos para la página Nosotros */
+body.pagina-nosotros {
+    background-color: #006709;
+}
+Imp_Acrílicos{
+    background-color: #ad1000;
+    width: 550px;
+    height: 120px;
+    border-radius: 30px;
+    margin-left: 50px;
+}
+.Imp_Acrílicos h1 {
+  font-size: 50px;
+  text-align: left;
+  margin-left: 50px;
+  margin-bottom: -15px;
+  color: white;
+}
+.Imp_Acrílicos p {
+ font-size: 30px;
+ text-align: left;
+ margin-left: 50px;
+ color: white;
+}
+.Acrílicos_Columna{
+    float: left;
+    width:25%;
+    text-align:center;
+    margin: 30px;
+    margin-left: 80px;
+}
+.Acrílicos_Columna img{
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    margin-left: 30px;
+    margin-bottom: 0;
+    box-shadow: 2px 2px 2px 2px #9b9b9b;
+    border-radius: 30px;
+}
+
+.Acrílicos_Columna h2{
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 10px;
+    color: black;
+}
+/*---------------AcrilPro-------------- */
+.AcrilPro{
+    float: right;
+    width: 50%;
+    text-align: justify;
+    padding-left: 30px;
+    padding-right:40px;
+    margin-top: 50px;
+    margin-right: 200px;
+    width: 500px;
+    height: 430px;
+    background: white;
+    border-radius: 30px;
+
+}
+.AcrilPro h1{
+    color: #ad1000;
+}
+.AcrilPro h2{
+    color: #ad1000;
+}
+.AcrilPro p{
+    font-size: 20px;
+    text-align: justify;
+}
+.AcrilPro li{
+    text-align: justify;
+}
+#FichaT_Acrilpro{
+    background: white;
+    border-radius: 30px;
+    float: left;
+    width: 600px;
+    height: 500px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-left: 80px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+/* ---------PASA Ferrecril---------*/
+.Ferre{
+    float: right;
+    width: 50%;
+    text-align: justify;
+    padding-left: 30px;
+    padding-right:40px;
+    margin-top: 50px;
+    margin-right: 200px;
+    width: 500px;
+    height: 430px;
+    background: white;
+    border-radius: 30px;
+
+}
+.Ferre h1{
+    color: #ad1000;
+}
+.Ferre h2{
+    color: #ad1000;
+}
+
+.Ferre p{
+    font-size: 20px;
+    text-align: justify;
+}
+.Ferre li{
+    text-align: justify;
+}
+#FichaT_Ferre{
+    background: white;
+    border-radius: 30px;
+    float: left;
+    width: 400px;
+    height: 500px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-left: 200px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+/* ---------Aislaflex---------*/
+
+.Aislaflex{
+    float: right;
+    width: 50%;
+    text-align: justify;
+    padding-left: 30px;
+    padding-right:40px;
+    margin-top: 50px;
+    margin-right: 200px;
+    width: 500px;
+    height: 430px;
+    background: white;
+    border-radius: 30px;
+
+}
+.Aislaflex h1{
+    color: #ad1000;
+}
+.Aislaflex h2{
+    color: #ad1000;
+}
+
+.Aislaflex p{
+    font-size: 20px;
+    text-align: justify;
+}
+.Aislaflex li{
+    text-align: justify;
+}
+#FichaT_Aisla{
+    background: white;
+    border-radius: 30px;
+    float: left;
+    width: 450px;
+    height: 450px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-left: 150px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+/* Estilos específicos para la página de PASA Barrera de Vapor */
+.ProductoPasa {
+    float: right;
+    width: 50%;
+    text-align: justify;
+    padding-left: 30px;
+    padding-right: 40px;
+    margin-top: 50px;
+    margin-right: 200px;
+    width: 500px;
+    height: 430px;
+    background: white;
+    border-radius: 30px;
+}
+
+.ProductoPasa h1 {
+    color: #006709; /* Puedes elegir otro color si lo prefieres */
+}
+
+.ProductoPasa h2 {
+    color: #006709; /* Puedes elegir otro color si lo prefieres */
+}
+
+.ProductoPasa p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.ProductoPasa li {
+    text-align: justify;
+}
+
+#FichaT_Pasa {
+    background: white;
+    border-radius: 30px;
+    float: left;
+    width: 450px;
+    height: 450px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-left: 150px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+/* Estilos para la sección de Servicios */
+.Imp_Serv {
+    background-color: #ad1000;
+    width: 550px;
+    height: 80px; /* Reduje un poco la altura */
+    border-radius: 30px;
+    margin: 20px auto; /* Centrado horizontal y un poco de margen vertical */
+    text-align: center; /* Centrar el texto dentro del encabezado */
+    display: flex;
+    justify-content: center; /* Centrar el texto horizontalmente en el flex container */
+    align-items: center; /* Centrar el texto verticalmente en el flex container */
+}
+
+.Imp_Serv h1 {
+    color: white;
+    font-size: 35px; /* Reduje un poco el tamaño de la fuente */
+    text-align: center;
+    margin: 0; /* Eliminar márgenes innecesarios del h1 */
+}
+
+.servicios-container {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos pasen a la siguiente línea en pantallas pequeñas */
+    justify-content: center; /* Centrar los cuadros de servicio horizontalmente */
+    padding: 20px; /* Añadir un poco de espacio alrededor de los cuadros */
+}
+
+.Servicios_Columna {
+    width: calc(33.33% - 40px); /* Tres columnas con un poco de espacio entre ellas */
+    margin: 20px;
+    text-align: center;
+    box-sizing: border-box; /* Asegurar que el padding y el border no aumenten el ancho */
+    display: flex;
+    flex-direction: column; /* Alinear el título y la imagen verticalmente */
+    align-items: center; /* Centrar el título y la imagen horizontalmente */
+}
+
+.Servicios_Columna h2 {
+    color: white;
+    background-color: #02a511;
+    width: 300px;
+    height: auto; /* Ajustar la altura automáticamente según el contenido */
+    padding: 10px 20px; /* Añadir padding para que el texto respire */
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 2px 2px 2px 2px #494949;
+    margin-bottom: 10px; /* Espacio entre el título y la imagen */
+}
+
+.Servicios_Columna img {
+    background-color: #02a511;
+    width: 300px;
+    height: 300px;
+    padding: 6px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px #494949;
+    object-fit: cover; /* Asegurar que la imagen cubra el contenedor sin deformarse */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .Servicios_Columna {
+        width: calc(50% - 40px); /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .Servicios_Columna {
+        width: 100%; /* Una columna en pantallas pequeñas */
+        margin: 20px 0; /* Ajustar los márgenes para una sola columna */
+    }
+}
